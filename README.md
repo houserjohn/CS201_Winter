@@ -63,3 +63,78 @@
         * negative ecosystem status report
 * An Example: An in-country
 * Create companies to employ people who would otherwise be poachers
+## 1/11/24 Week 1 Thursday Lec 2
+* Adaptively Caching Context Information for Fast Concurrent Access in Internet of Things
+* Shakthi Weerasinghe
+* 01 Context & Context Management
+* Where the IoT Big Data comes from?
+    * Twenty-five gigabytes: that's how much data a connected car will upload to the cloud every hour
+* Context Information
+    * "Any information that can be used to characterize the situation of an entity. An entity is a person, place, or object that is considered relevant to the interaction between a user and an application, including the user and applications themselves."
+* Content Spaces
+    * Foundation for context representation, reasoning, validation, & prediction
+    * Naive Context Spaces (NCS)
+    * Context Spaces leads towards a general context model to aid reasoning about and describing context, and to design operations for manipulating and utilizing context
+        * Geometrical spaces metaphor
+        * The state-space model [Ogata, 67]
+        * Control Theory
+    * Application space - UoD
+* Context Spaces Model: Example
+    * Context:
+* Context Querying
+* Context-as-a-Service
+    * Enables global standardization and interworking among different context providers and consumers in IoT environments.
+* Context Definition & Query Language (CDQL)
+* 02 ACOCA: Challenges & Opportunities
+    * Problems in caching context information
+* Efficiency of Context Queries
+    * Responding to context queries are time-critical
+    * Context needs to be computed proactively to notify in time
+    * But context is transient, and larger that data in total size
+* Summary of Related Work
+* Traditional Adaptive Data Caching vs ACOCA
+* 03 Parameterizing ACOCA Decisions
+* Strategies for Context Retrieval
+* Formal Models of Context Retrieving
+* NAd Retrieval
+* FC Retrieval
+* Re Retrieval
+* Results and Discussion
+* Four further problems
+    1. Not paramters can be efficiently monitored of all billions of situations
+    2. What parameters are more important to make the context caching decisions?
+    3. What parameters are relevant to making context fresher?
+    4. Parameters can have varying weights to how significant they are to make caching decisions.
+* Context Freshness Monitoring System (CFMS)
+* Evaluation and Results (Different Caching Algorithms)
+* Estimating the Refresh Rate
+* 04 Concepts for ACOCA
+* Definition of Adaptive Context Caching
+    * The decision about what context to cache in near real-time to achieve cost efficiency goal(s) measured by Quality of Service (QoS) and Quality of Context (QoC) parameters. These decisions should be comparable with a benchmark trained with absolute prior knowledge, while using the minimal necessary resources and ensuring minimum loss to quality of cached context (QoCaC)
+* Formulating an Adaptive Context Caching Mechanism
+* Context Prediction and Estimation Engine
+* 05 Reactive & Proactive Context Caching
+* Current Value of Returns from Context Caching
+* How Long? When? to Cache
+* How to Cache Context?
+* Eviction Heuristics
+* Experimental Hueristics
+* Experimental Setup
+* Results and Discussion
+* Reactive Adaptive Context Caching
+* Context Selection for Caching
+* Making the context selection decision
+* Context Query Classes and Overcoming Uncertainty
+* Adpative Refreshing Rate Setting
+* Time Aware Context Cache Management
+* Results and Discussion (1-SLA) - Performance Efficiency
+* Results and Dicussion (1-SLA) - Overall
+* Results and Discussion (n-SLA)
+* The missing objective is maximizing QoC
+* ConCQEng
+* Results and Discussions
+* Proactive Context Caching
+* Structural Changes & In Cache Verification
+* Results and Discussion
+* Future Directions
+* Publications
