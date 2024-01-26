@@ -138,3 +138,46 @@
 * Results and Discussion
 * Future Directions
 * Publications
+## 1/25/24 Week 3 Thursday Lec 3
+* Topic Models
+    * UN
+* GANs
+    * kernel discriminators
+    * training GANs
+    * Evan Becker
+* AI for Hemodynamic Analysis of Cardiovascular
+    * Gary Chen
+    * Hemodynamics
+        * Heart rate, Flow velocity, Blood pressure
+* Multi-agent Reinforcement Learning: Asynchronous Communication, Robustness and Privacy
+    * Reinforcement Learning
+    * Cooperative Multi-Agent Reinforcement Learning
+    * Topic 1: Asynchronous Communication
+* Topic 2: Robust Reinforcement Learning
+    * Adversarial attack for Communication
+* Topic 3: Differentially Private Reinforcement Learning
+    * Multi-Agent Reinforcement Learning
+* Non-Euclidean Mixture Model for Social Network Embedding
+* Social Network Embedding Models
+    * NMM-GNN Architecture
+    * Evaluation: Classification & Link Prediction
+* Situational impairments
+* Chameleon: Compoisitional Reasoning with Large Language Models
+    * Chain-of-Thought Prompting (CoT)
+* Predicting Perinatal Depression Using Electronic Health Data
+    * Perinatal depression
+* Harnessing Black-Box Control to Boost Commonsense
+    * Motivations -- Why?
+    * Build Commonsense Scorer
+* Improving the Trustworthiness and Generalization of Machine Learning Models
+    * Research Overview
+    * Trustworthiness
+        * Evaluate and improve certified robustness against adversarial attack
+    * Red Teaming Language Model Detectors with Language Models
+    * Universality and Limitations of Prompt Tuning
+    * Input Tuning vs. Weight Tuning
+    * Absorbing format with prompt tuning
+* Predicting and Interpreting Energy Barriers of Metallic Glasses with Graph Neural Networks
+* Motivation: AI for Material Science Research
+    * A Graph Machine Learning Formulation of Energy Barrier Prediction
+    
