@@ -180,4 +180,62 @@
 * Predicting and Interpreting Energy Barriers of Metallic Glasses with Graph Neural Networks
 * Motivation: AI for Material Science Research
     * A Graph Machine Learning Formulation of Energy Barrier Prediction
-    
+
+## 1/30/23 Week 4 Tuesday Lec 4
+* Unsupervised Learning of Segmentation
+* Making sense of sensory data 
+* Supervised Undifferentiated Multi-Task Learning
+* Segment Anything Model
+* Learning - Drilling
+* Learning - Mulling
+* what is a baby supposed to learn?
+* What can we learn from nothing but data?
+* From undivided sensation to bounded rationality?
+1. Unsupervised Learning of Generic Objectives
+* Challenges of Video Object Segmentation
+    * Motion helps, Appearance helps
+* Object Segmentation from Unlabeled Videos
+    * Our work: Segmentation and Flow Decomposition
+* Flow = Displacement Across Frames
+* Optical Flow = Local Displacement Per Pixel
+    * Concurrently Learn Segmentation and Flow Estimation
+* Our Appearance Motion Decomposition Model
+* Training on Youtube-VOS: 4000 Videos, 5s, 94 Categories
+* Single Image to Multiple Segmentation Channels
+* Objectness Emerges in a Particular Channel
+* The Emergence of Objectness: Why and How?
+    1. Segmentation uncertainty
+    2. Reconstruction error
+    3. Mask center and spread
+* Zero-Shot Video Object Segmentation
+* Figure-ground Segmentation Learned without Edges, Optical Flows, or Saliency but with only Instantaneous Visual Constancy
+2. Unsupervised Learning of Hierarchical Semantics
+* Semantics Intrinsically Has Multiple Levels of Granularity
+* Segmentation: Pixel-wise Representation Learning
+    * co-segmentation use features to get segmentation
+    * feature learning
+    * Key insight: While we don't know X or G, any good X makes G consistent!
+* Feature Learning by Hierarchical Segment Grouping
+    * Feature learning loss + goodness of grouping loss
+* SOTA on Unsupervised Semantic Segmentation
+* First Unsupervised Hierarchical Semantic Segmentation
+* Contextual Visual Segment Retrieval
+3. Unsupervised Learning of Visual Context
+* Semantics Is Fundamentally Grouping Not Naming
+* Human-Object Interaction Recognition
+* Supervised Approach: Discrete Classification
+* Our Approach: Discriminative Feature Learning
+* Oracle: Co-occurring Semantic Statistics for Context
+* Human-Object Interaction Benchmarks
+* Recognize Interactions via Retrievals
+4. Unsupervised Learning of Parts-and-Wholes for Recognition
+* New: Recognition w/ Hierarchical Segmentation & Adaptive Tokens
+* Hierarchical Segmentation By Recognition
+* Hierarchical Parts-and-Wholes For Recognition
+* Unsupervised Discovery of Parts-and-Wholes
+* Better Semantic Segmentation
+* Better Semantic Segmentation w/o & w Fine-Tuning
+* Multi-faceted Inverse Learning Problem
+* Unsupervised Structured Inverse Learning Problem
+* Agenda: Unsupervised Learning of Mid-Level Vision
+
