@@ -238,4 +238,70 @@
 * Multi-faceted Inverse Learning Problem
 * Unsupervised Structured Inverse Learning Problem
 * Agenda: Unsupervised Learning of Mid-Level Vision
-
+## 2/1/2024 Week 4 Thursday Lec 5
+* Precision Healthcare: Guiding Anti-Cancer Therapy through Multimodal Biomedical Imaging and Machine Learning
+    * Mingqi Han, Ph.D.
+* Tumors: High Energy Demanding Regions in the Body
+    * Growth of tumor cells requires nutrients and building blocks
+* Targeting Mitochondria in Cancer
+    * Mitochrondrial metabolism fuels tumor growth
+    * Bioenergetics: generate ATP
+    * Upregulated gylcolysis: generate building blocks ...
+* Early mitochondria activation in tumorigenesis
+    * Tumor cells require energy and nutrient to proliferate
+    * Transformed cells upregulate mitchondrial mass
+    * Pre-clinical settings achieved effective response by targeting mitochondrial vulnerability
+* Targeting Mitochondria in Cancer
+    * Clinical trials targeting mitochondria in tumor
+* Overview
+    * Spatial Mapping of Mitochondria
+* Mitochondrial Bioenergetics
+    * Electron passage and proton pumping
+    * Electron transport chain (ETC)
+    * Oxidative phosphorylation (OXPHOS)
+* Folded Inner Membrane: Mitochondrial Cristae
+* Mouse Models and Histology
+    * Genetically Modified Mouse Models (GEMMs)
+* In vivo Measure Mitochondrial by PET/CT
+* Reprogrammed Glucose Metabolism in Cancer
+* Stratify Tumor by Metabolic Signature
+* What Dictates the Signal Difference
+* Metabolic Signature, Histology, and Respiration
+* Structure-Function Correlation
+    * In vivo imaging: fluorescent staining unfriendly
+* Problems with 2D TEM
+* Analyzing Tumors with a "Google Earth" Approach
+    * Extracellular matrix: neutrophils infiltration
+* Vasculature and Microenvironment
+    * Metabolic Signature, Vasculature, Tumor Landscape
+* Distinct Mitochondrial Networks
+* Mitochondrial Cristae Subtypes
+* Deep Learning Based Organelle Analysis
+    * Organelle Segmentation
+* The Eureka! Moment
+* Mitochondrial Subpopulations
+    * Peri-droplet Mitochrondria (PDM)
+    * Peri-nuclear Mitochondria (PNM)
+* PDM associated Type I Cristae Structure
+* Compartmentalized Mitochondrial Metabolism
+* Nutrient Deprived Cell Growth
+* Summary
+    * Startify tumors based on their metabolic signature: Oxidative v.s. Glycolytic
+    * Distinct mitochrondrial networks associated with different metabolic signatures
+    * Oxidative tumors
+* Stratify GEMMs by LKB1 Status
+    * How do tumor metabolic signature change over time?
+* Longitudinal PET on Bioenergetics
+    * Metabolic Signature
+* LKB1 Regulates Peri-droplet Mitochondria (PDM)
+* Summary
+    * LKB1 expression sustains or elevates the bioenergetic processes in lung tumors
+    * The metabolic signature of a tumor can switch from oxidative to glycotic upon the loss LKB1
+    * LKB1 moderates the iteraction and communication between mitochrondria and lipid droplets
+    * The formation of PDM can alter the structure of mitochrondrial cristae to promote
+* Lipid Content as a Predictive Secondary Biomarker for Therapy Response
+* Structural Analysis of Chemical Compound to predict their
+    * "Nutrient storage" station
+    * Influence "Drug Metabolism"
+* Precision Healthcare: Predict Therapy Resistance
+* Correlating Imaging with Diagnosis Observations
