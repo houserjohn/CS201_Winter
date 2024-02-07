@@ -305,3 +305,131 @@
     * Influence "Drug Metabolism"
 * Precision Healthcare: Predict Therapy Resistance
 * Correlating Imaging with Diagnosis Observations
+## 2/6/2024 Week 5 Tuesday Lec 6
+* Re-searching the foundations of Heuristic Search
+    * Notes on five problems in connexion with graphs, heuristics, and re-expansions
+* High-level overview of problems
+* One of three pan-Canadian AI strategy institutes
+    * 2002 -> present
+    * 36 Canada CIFAR Chairs
+    * 400+ trainees
+* https://upperbound.ai/
+    * Travel scholarships
+* Traditional Games
+    * Machine Learning in Games
+    * Solving Games
+* Search
+    * Core search algorithms
+    * Multi-agent pathfinding
+* Games
+    * Pathfinding in games
+    * Puzzle entropy
+    * AI assisted design
+* MSc and PhD positions
+* Heuristic Search and Shortest Path Problems
+* Timeline of Search
+    * Dijkstra's Search, A* Search, Weighted A*
+    * IDA*
+    * Bidirectional Search
+* State Re-expansions
+    * Consistent Heuristic
+    * Inconsistent Heuristic
+    * Many algorithms encounter worst-case behavior when re-searching through previously visited states
+        * Dijkstra Algorithm
+        * Bidirectional Search
+        * A*
+        * Weighted A*
+        * IDA*
+* Algorithm/Problem Recent Solutions
+* Dijsktra's Algorithm (Uniform-Cost Search)
+    * g(n) be the cost of best known path from start to n
+    * Expand states from low to high g(n)
+    * Assume c(a,b) > 0
+* Unidirectional Problem
+    * Start goal
+* Negative Edge Costs
+    * What if some c(a,b) < 0
+        * Re-expand states (Johnson, 1973)
+        * Exponential worst-case complexity
+    * Bellman-Ford fixes this
+        * Expand all states iteratively (not greedy)
+        * O(V * E) -> O(V^2)
+* Bidirectional Search
+    * Let g_F(n) be the cost of the best known path from start to n
+* Bidirectional Problem
+* Negative Edge Costs
+    * Same problem as Dijkstra's algorithm - not formally analyzed
+* A*
+    * A Formal Basis for the Heuristic Determination
+    * Let g(n) be the cost of the best known path from start to n
+    * Let h(n) be an estiamte of the distance from n to goal
+    * Expand states from low to high f(n) = g(n) + h(n)
+    * Assume either c(a,b) >= 0 or c(a,b) > \epsilon
+    * Assume h(n) is both admissible and consistent
+* A* inconsistent heuristics
+    * Equivalent to negative edge weights in Dijsktra's algorithm
+    * Exponential worst-case
+    * Algorithm B (Martelli, 1977) - O(V^2)
+* Bidirectional Heuristic Search
+* Bidirectional Search + Heuristics
+    * Dijsktra -> Bidirectional Dijkstra
+* Explanation: Frontiers Miss
+* Explanation: Frontiers Meet Early
+* Initial Solution: Consistency
+    * Consistent Heuristic:
+        * Avoid frontiers crossing
+        * Improve heuristics
+* Problem
+    * No bidirectional theory
+        * Algorithms terminating late
+        * Optimality of algorithms not well defined
+* Unidirectional Theory
+    * If f(u) < C^* then we must expand u
+* Bidirectional Problem - Front to End
+* New Theory
+* Comparison
+    * A^*: Repeatedly expand state with lowest f(n)
+    * NBS: Repeated expand pair of states with lowest lb(u,v)
+        * May expand the same state in each direction
+        * No more than 2x minimal expansions / no algorithm can beat this
+* Consistency
+* New theory
+* Experimental Results 24 Puzzle; 10GB Heuristic
+* A* and IDA*
+* Better Algorithms
+    * Algorithm B (1977) does O(N^2)
+    * IBEX/BGS does O(NlogC^*)
+* Two Problems
+    * Misleading heuristic causes ex-expansions
+        * Could avoid with Dijkstra's algorithm
+    * Heuristic may prune many states
+        * Don't want to discard completely
+* Better Algorithms
+    * If we knew C^* (solution cost) we could
+    * Estimate C^* using exponential search
+        * Use a budget to control the cost of overestimates
+        * What is maximum $f$ fully explored with K expansions
+* Weighted A*
+    * Heuristic search viewed as path finding in a graph
+    * Let g(n) be the cost of the best known path from start to n
+    * Let h(n) be an estimate of the distance from n to goal
+    * Expand states from low to high f(n) = g(n) + w*h(n)
+        * w is an inflation factor that bounds suboptimality
+        * ...
+* Weighted A^* (HPA+)
+* Weighted A^*
+    * Weighted A^* can do O(N^2) re-expansions of N states
+    * Re-expansions are optional
+* Alternate Weightings
+    * Suppose we write priority function as: f(n) = \phi(h(n), g(n))
+    * what properties on $\phi$ allow us to avoid reopening states
+* Piecewise 
+    * Suboptimality
+* Weighted A^* Summary
+    * Previous work didn't deeply analyze the impact of revisits
+    * Rich class of improved priority functins
+    * Can control where the suboptimality arises
+* Open Question
+    * Given a general graph without negative cost cycles:
+        * Extract A^* search
+
