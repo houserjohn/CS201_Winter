@@ -432,4 +432,74 @@
 * Open Question
     * Given a general graph without negative cost cycles:
         * Extract A^* search
-
+## 2/13/2024 Week 6 Tuesday Lec 7
+* From Haptic Illusions in Virtual Realityy to Beyond Real Interactions
+* Commercialization of virtual reality (VR) headsets
+* VR applications
+    * Exploring, artifacts, learning
+    * With limited haptic feedback
+* Missing the sense of touch in VR
+* Vision of swarm of drones providing haptics
+* Goal: feeling textures and forces in VR
+* Implementation: using a safe-to-touch drone
+* Many challenges, including low position accuracy
+* Haptic devices that provide the sense of touch
+* All haptic devices have hardware limitations
+    * Accuracy, speed, resolution
+* Our perception is imperfect, so we do not need perfect hardware
+* We can leverage limits of our perception to create an illusion of improved performance
+* Outline
+    * Illusion of realistic haptic rendering
+    * Beyond-real interactions
+* Using a safe-to-touch drone for haptics in VR
+* People instinctively touch safe-to-touch drones
+* Ideally, drone is positioned at contact point
+* In practice, position accuracy is a problem
+* Using retargeting illusion as a solution
+* How the brain plans and controls movement
+* Improving the perceived position accuracy of drones through dynamic retargeting
+* Overcoming position inaccuracies with illusions
+* Outline
+    * Illusion of realistic haptic rendering
+* Limited speed delays mobile robot's arrival time
+* Touch prediction for dynamic retargeting
+* Outline
+* Angle redirection for improved resolution
+* Detection thresholds for angle redirection
+* Evaluating performance for angle redirection
+* Scaling up for improved resolution
+* Detection thresholds for scaling up
+* Evaluating performance when scaling up
+* Outline
+    * Illusion of realistic haptic rendering
+* We can remap users' movements in VR
+* Beyond-real interactions
+* Untethered headsets and walking in VR
+* I'm a giant locomotion: 10x gain
+* Seven-league boots locomotion: 10x gain
+* Need for more systematic investigations in addition to empirical evaluations
+* Understanding perception
+* How the brain plans and controls movement
+* VR system intercepts sensory signals
+* Beyond-real designs create sensory conflict
+* Framework for describing sensory conflict
+* Evaluating designs from a large design space
+* Open challenges and future work in VR
+    * Designing usable interactions
+        * Building predictive tools
+        * Simulating alternatives
+    * Considering individual differences
+        * Capturing user behaviors
+        * Adapting to individual users
+* Situated Interactions Lab (\psi Lab)
+* In situ intelligence augmentation
+    * Adaptive interfaces
+        * Minimal, Timely, Sensory modality
+    * Input on-the-go
+        * Uncertainty
+        * Disambiguation
+        * Privacy-preserving
+    * Interactions w/ situated AI
+        * Complexity
+        * Dynamicity
+* thanks to my advisors 
