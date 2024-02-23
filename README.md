@@ -502,4 +502,103 @@
     * Interactions w/ situated AI
         * Complexity
         * Dynamicity
-* thanks to my advisors 
+* thanks to my advisors
+## 2/22/24 Week 7 Thursday Lec 8
+* Leveling up Next Gen Xbox User Experience with Neural Networks and Sound
+* Krishna Kant Chintalapudi
+* Xbox many components
+* Console Gaming
+* Cloud Gaming
+* How Gaming Works
+    * Game Engine
+        * Infinite loop evolving game state continuously
+    * Gamer Inputs
+        * Digital Inputs
+            * Button presses
+        * Analogue Inputs
+            * Joy sticks
+    * Feedback
+        * Haptic Feedback
+            * Similar to an audio stream
+        * Rumble Motors
+            * Digital commands
+    * Audio & Video
+        * Game audio stream
+        * Video frames at 60Hz refresh rate (16.67ms)
+    * Connectivity options
+        * Console gaming
+        * Cloud Gaming
+* To Wire or go Wireless is the Question
+* Background - Data Rates in WiFi
+    * Each data rate needs a certain minimum SNR
+    * Lower data rate takes more time and waste Time and Energy
+    * OFDM
+    * If more than certain number of sub-carriers are poor - you have packet losses
+* Gamer's Wireless Channel
+    * During active game play
+        * Up to 10-15 dB changes with 50-80ms
+        * Consecutive losses are common
+    * Xbox Transmits PCM audio in 8ms chunks
+    * Each loss introduces a discontinuity
+    * Joy stick does not respond well
+        * Packet losses create discontinuities
+* User Study
+    * Audio experience is effected by
+        * Packet loss rates
+        * Consecutive losses - loss duration
+        * Type of audio - racing, classical, music
+* Battery Longevity
+    * Controllers are battery powered 200-400 MHz ARM processors
+* First Thoughts
+    * There is two decades of work in Adaptive Rate Techniques
+* How State-of-the-art Adaptive Rate Schemes Work
+* We should be able to use Reinforcement Learning
+* A Continuous Online Learning Approach
+* Wireless Channel Asymmetry
+    * Reverse and Forward Channels measurements are not the same
+    * Tx Power differences
+* ANNs Can Learn Online to Model Wireless Channels
+* We implemented state-of-the-art in reinforcement learning
+    * 10x reduced in packet loss using PPO clip
+* ADR-X: Leverages Wireless Domain Knowledge
+    * Key Insight 1: Using wireless domain knowledge, can significant learning relieve burden from the ANN
+    * Key Insight 2: Use an ANN to learn to map the wireless channel into a wired channel and then make use of standard results
+* ADR-X: Online Continuous Learning and Adaptation
+    * Learning needs to be online and continuous
+* ADR-X: The Loss Function
+    * Use the instantaneous measured sample
+* ADR-X: Feature Engineering for Compute and Convergence Speed
+* ADR-X: Survivorship Bias and Stability
+    * Initially, when the network is learning, bad actions can be taken
+    * Survivorship Bias: Packets lost => CSI measurements lost
+    * Guardrails
+* ADR-X: Real time convergence
+    * Is robust to sudden changes in interference and operating costs
+* ADR-X is an ML powered adaptive data scheme that learns and adapts continuously in real time
+* Tale of Two Streams
+    * Accessory Stream (Game Audio + Chat) Proprietary Protocol
+* The Ekho Problem - Inter-Stream Delay
+    * Both streams are kept on, one for onlookers and the other for gamers
+    * The gamer hears two audio game streams at the same time - screen stream & accessory stream
+    * Server to ear latency for these paths are differentt
+    * Gives perception of Echo
+* User Study - How Much IDF Echo is Perceptible?
+    * 15 most popular Xbox games
+    * 3555 ratings in accordance with ITU-T P.808
+* Inter-Stream Delays
+* The Inter-Stream Delay Measurement Challenge
+    * No control over some end-points hinders measurements
+    * RTT/2 incurs errors due to latency asymmetry
+    * Sound propagation delay is not measureable without participation of both devices
+* Ekho's Solution
+    * Key Idea: Correlate the overhead sound from the screen and one recieved at the headphones to estimate the inter-streeam delay
+    * Server embeds inaudible acoustic PN sequences in the game audio
+    * The headphone/controller time stamps sample numbers and conveys them to server
+    * The microphone at the headset records the overhead sound from the screen, including the embedded PN sequences
+    * Server estimates delay difference by correlating the PN sequence
+* The Challenges
+    * The screen speakers and the headphone microphones distort the overheard game audio - needs to work in the cheapest qualtiy devices
+    * The PN sequences embedded in game audio that are already designed to be inaudible
+* Synchronizing the Streams
+    * Inject Empty Samples in faster route
+* Ekho allows for sub-millisecond synchronization of streaming media
