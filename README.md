@@ -602,3 +602,80 @@
 * Synchronizing the Streams
     * Inject Empty Samples in faster route
 * Ekho allows for sub-millisecond synchronization of streaming media
+
+## 2/27/2024 Week 8 Tuesday Lec 9
+* Representation and Control of "Meanings" in Large-Scale Models
+* Observational Analysis of AI Bots
+* Emergent behavior
+* Can we do analysis?
+    * Data is data is data is data ...
+    * Where is the "information" in a trained LLM?
+    * How do we represent "meanings"
+* Meaning/Semantics Today
+* Pareidolia
+* Information in a Trained Model
+* Generalization, Regularization, Induction, etc.
+    * L_test(x; W) <= L_train(W;D) + \sqrt(2R^2/NI(W;D))
+    * D ~ P(x)
+    * De Finetti Probability does not exist (Abstract)
+* In the beginning, "Information" is in the data
+    * (nothing else is known about the task before training)
+    * (Training) Dataset D, Weights W
+    * After learning, "information" is in the weights (parameters) (nothing else is left)
+* Generalization bounds
+    * Russo and Zou (2016), Xu and Raginsky (2017)
+    * Catoni (2007) (PAC-Bayes)
+* TL;DR 
+    * Information can be measured even for deterministic models trained on a single dataset ["where is the information in a Deep Neural Network?"]
+    * Inductive principle: Information Lagrangian
+* Where are the Meaning?
+    * Do Deep Neural Network develop an inner language?
+    * If so, can we translate "Neuralese" to English?
+    * Can we "transfer" meanings, bypassing the medium?
+* LLMs and Meanings
+    * Pre-training
+    * Generation
+    * Auto-regressive
+    * Sentence-level Annotation (SFT/RLHF)
+* Are LLMs Controllable?
+    * Discrete-time Stochastic Dynamical System in (continuous) Token Embedding Space
+    * The state ("of mind") of an AI Bot is the sliding window input ("context") to the LLM
+    * Trivially controllable in the space of tokens (CCF)
+* What is the space of meanings*?
+    * Definition: "Meaning is a relationship between linguistic form and intentionality = something external to the language"
+    * Fact: (Large) language models are system trained only on linguistic form. They have no "communicative intent" or "intentionality"
+    * Claim: "Any system trained only on linguistic form [LLMs] cannot in principle learn meaning
+    * QED?
+    * Philosophy, Epistemology, Semiotics ... "Deflationary" theories
+    * Tarski: "the meaning of 'the sky is blue' is: the sky is blue"
+    * Whatever the meaning of "the sky is blue" is, it is shared with "the sky is blue" or ...
+    * Meaning, then, is none of these expressions, but the relation between them, which is an equivalence class
+* What is the (latent) source of meaning?
+* Where do meanings in LLMs originate
+    * Equivalence classes of trajectories determined by the trained model
+    * The source of meaning in LLM is inside the head of content providers/annotators: It is external to the model, and defines (veridically inconsistent but semantically valid) ground truth.
+    * Two ways of representing meanings
+    * [x] = {x' | x' ~ x } 
+    * Can only do symmetric relations
+    * Autoregressive models
+* TL;DR
+    * Meanings in LLMs are equivalence classes of trajectories
+    * Either represented by the discriminant vector (beyond EOS) or by the Distribution of Continuations
+* Controllability of LLMs (AI Bots)
+* TL;DR LLMs are controllable
+* About the algebra: Do bots develop an "inner language"
+* A little experiment
+* TL;DR
+    * An autoregressive transformer (and other non-ffd architectures) can encode abstract concepts (as well as "physical concepts")
+    * It can understand them (learn in finite time from finite data with finite compute/memory)
+    * We (external agents) cannot tell if and when that has happened
+    * But we can falsify: We know we are not there yet. A NeRF will never get there (nor will a CNN).
+* Beyond?
+    * LLMs may be beyond generalization: Onto memorization + specific computation for Transductive Inference
+        * My mother always told me to not generalize ... Memorize & Reason (Solomonoff, eventually)
+    * Embodiment?
+* Package Philosophy
+    * Cartesian Account
+    * Prime Account
+        * Traditur Ergo Est
+* References
