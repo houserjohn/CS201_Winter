@@ -679,3 +679,163 @@
     * Prime Account
         * Traditur Ergo Est
 * References
+
+## 2/29/2024 Week 8 Thursday Lec 10
+* Enhancing Safety on the Web with On-Device ML
+    * Web Permissions and Browser Fingerprinting Detection
+    * Igor Bilogrevic, Staff Research Scientist
+* About Me
+    * Staff Research Scientist in the Applied Privacy Research Team at Google
+        * Research lead in the Privacy Sandbox Initiative
+        * Help Chrome users with privacy-friendly features
+    * Previously
+        * Resaercher with Nokia Research Center
+        * PhD at EPFL (Switzerland), applied Crypto and ML
+    * Protecting your privacy online
+        * The Privacy Sandbox initiative aims to create technologies that both protect people's privacy online and give companies and developers tools to build thriving digital businesses
+* Safety on the Web
+    * Safety on the web encompasses many areas
+        * Security, privacy, anti-fraud, anti-tracking, etc.
+    * My work focuses on
+        * Web permission prompt spam
+        * Browser anti-fingerprinting
+    * Today's talk is about those two web safety topics, joint work with Googlers and external researchers (NDSS 2024 papers)
+* Don't Interrupt Me
+    * A Large-Scale Study of On-Device Permission Prompt Quieting
+* Motivation
+    * Home page
+    * Unwanted Permission Prompts
+* Prior Work
+    * Triggered if any of the below is true:
+        * Site in bottom 5% by grant rate
+        * User denied 3 consecutive prompts in 28d
+        * Settings opt-in
+* This Work
+    * Current quiet prompt UI
+    * ML-based activation
+    * User experience
+* Quiet Chip
+* Quietest Chip
+    * Most people block notifications from this site
+* Chip Pattern
+    * Request Chip, Confirmation Chip, Site Controls
+* ML-based Activation
+* Web Permissions Predictions (WPP)
+    * Features used for training
+        * Permission type
+        * 28d average action rates across all permissions
+        * 28d average per-permission action rates
+        * 28d number of loud permission prompts
+        * User gesture prior to prompt
+        * Desktop vs. mobile
+* Decision Logic
+    * Permission request
+    * Bottom 5% grant rate
+    * User opt-in via settings
+    * greater than 3 loud prompts
+* Improved quieting efficacy
+* User Experience
+    * Method
+        * 2.9M survey invitations shown
+        * 13,109 complete responses
+            * 7 languages, 156 coutnries, 66s median response time
+            * Caveat: self-selection bias
+* How noticeable is the chip?
+* How helpful is prompt quieting?
+* Why do respondents feel uneasy about quieting?
+* Upcoming Improvements
+    * Reduced false positive rate by adding per-site signals to the WPP model
+    * Change the string in the chip to increase perceived control
+* Summary
+    * ML-based activation increases the reach and efficacy of prompt quieting
+    * Most respondents found quieting helpful while identifying room for improvement
+* Additional findings in the paper
+    * Mental model of why Chrome quiet prompts
+    * Subjective false positive rates
+    * Override efficacy
+* FP-Fed: Privacy-Preserving Federated Detection of Browser Fingerprinting
+* What is Browser Fingerprinting?
+* Tracking on the Web
+    * Browsers block/restrict third-party cookies
+* What is Browser Fingerprinting?
+    * Collects set of information related to a user's device that can be uniquely identificable
+        * Hardware (# CPU cores, screen size, etc.)
+        * Software (Browser extensions installed, Version of flash installed, etc.)
+    * Deployed via JS script that runs in browser (e.g. fingerprintjs)
+    * Invasive tracking technique
+        * Stateless: no information stored in browser (e.g., cookies)
+        * Hard to prevent and less transparent
+* Example: Canvas Fingerprinting
+* Prior Work
+    * Browser Fingerprinting Detection
+        * Manually curated blocklists/heuristics
+            * Hard to maintain
+            * Narrowly defined
+        * Centralized Machine Learning + Automated Web Crawl
+            * Cannot replicate real human interactions
+            * Blocked by bot detectors, CAPTCHAs, login pages, and paywalls
+            * Large number of features (~2000)
+        * Might miss fingerprinting scripts
+    * Naive Solution
+        * Gather real-world observations from users as they browse websites
+        * Data collected from websites might reveal sensitive information (E.g., medical conditions)
+    * Differentially Private Federated LEarning (DP-FL)
+    * DP-FedAvg
+        * Model updates are shared with the server
+        * Updated model is shared with users
+        * Repeats until convergence
+* Applying DP-FL to Browser FP
+    * Challenges
+    * Not trivial to federate existing classifiers efficiently
+    * Intensive feature extraction and complex algorithms may impact browser performance
+    * DP introduces privacy-utility tradeoff
+* Our Work
+    * FP-Fed
+        * Distributed system (DP-FL) for detecting browser fingerprinting in the wild
+        * Requires minimal features (~150)
+        * Achieves high accuracy with minimal false positives even with formal privacy guarantees
+* FP-Fed
+    * Step 1: Participants build local dataset
+* Step 1: Participants build local dataset
+    * a) Feature Extraction
+    * API Call Counts (684)
+    * Custom features (830)
+    * b) Assign Ground Truth
+    * High precision ground truth heuristic defiend
+    * c) DP Federated Feature Pre-processing
+    * Feature normalization
+        * Normalize each feature have mean 0 and variance 1
+    * DP-FedNorm: Federate + Add DP 
+* Experimental Setup
+    * Dataset
+    * Ideally real-world browsing sessions will be collected
+    * For the purposes of this work, autoamted crawl of 20k popular websites sampled from Chrome User Experience Reports
+    * 18k successfully viisted, 181k unique scripts, 752 fingerprinting
+    * Simulating Participants
+        * Each pariticpant samples 100 domains according to Zipf's law over popularity of websites from Tranco ranking
+        * Assign scripts loaded by domain to participant
+    * Model
+        * Logistic Regresion, LBFGS solver
+        * Report Area-Under-Precision-Recall-Curve (AUPRC)
+            * Threshold can be adjusted
+    * Minimal Feature Set
+        * Collecting all 1514 features may be computationally intensive and raise privacy concerns
+        * Experiment with smaller feature sets
+    * FP-Fed
+        * Impact of epsilon (privacy parameter)
+        * All feature set 
+        * 100 participants sampled per round
+        * Impact of feature set (All, FP-Inspector, JShelter, High Entropy)
+    * Working towards a "minimal" feature set
+        * Model parameters are used as "feature importance"
+    * RQ2: How many custom features necessary?
+* Conclusion
+    * Simulated distributed setting
+    * Large performance dorp at high levels of privacy
+    * Real world considerations
+    * Ground truth heuristic
+* Summary
+    * Introduced FP-Fed: Applying DP-FL to solve problem of detecting browser fingerprinting
+        * Does not require automated crawl
+        * Efficient system: Minimal feature set (149 API Call counts + custom features)
+        * Acceptable utility with strong privacy guarantees (AUPRC > 0.8 at epsilon = 1)
