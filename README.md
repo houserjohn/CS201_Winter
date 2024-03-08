@@ -839,3 +839,197 @@
         * Does not require automated crawl
         * Efficient system: Minimal feature set (149 API Call counts + custom features)
         * Acceptable utility with strong privacy guarantees (AUPRC > 0.8 at epsilon = 1)
+## 3/7/2023 Week 9 Thursday Lec 12 (missed Lec 11)
+* Geometric Regularizations for 3D Shape Generation
+* Qixing Huang
+    * UT Austin
+* Parametric generative models
+    * Map latent space to shapes
+* Recent Breakthroughs
+    * GAN, VAE, AD, Diffusion Models
+* Distribution alignment is the common theme
+* 3D Deep Learning at Large
+    * Volumetric, Triangular mesh, Point cloud, Parametric surfaces, Constructive solid geometry, Multi-view, Scene-graph, Triplane
+* 3D Generative Modeling
+    * Existing generative models + suitable 3D representations
+* Difference between images and 3D models
+* Priors about 3D models
+    * Physical priors
+        * Man-made objects should be physical stable
+    * Topological priors
+        * Topological attributes are smooth and distributions shall match
+    * Deformation priors
+        * Approximate articulated deformation
+    * Generic distribution alignment cannot preserve these priors
+* What about if we have sufficient data
+    * OpenAI Sora
+* Problems with SORA
+    * Perspective geometry is not preserved
+* Overview
+    * GPLT3D: Physics/Geometry
+    * ARAPReg/GeoLatent/GeoCorres: Deformation
+    * PDReg: Topology
+* GPLD3D: Latent Diffusion of 3D Shape Generative Models by Enforcing Priors
+* Image diffusion models
+* Latent Diffusion
+    * Train diffusion in the latent space
+* Latent diffusion in 3D generative modeling
+* Issues of SOTA diffusion models
+* Motivation and goal
+    * Training the diffusion model only sees latent codes of the training instances, which are sparse
+    * Develop a quality checker that evaluates the quality of the continuous varying 3D shape based on the corresponding latent code
+    * Enhance the diffusion model using this quality checker which accesses all latent codes
+* Guided Diffusion Using a Classifier
+    * diffusion models beat GANs on Image synthesis
+    * Deals with the diffusion procedure (inference)
+    * Rely on gradients of the classifier
+* Improve training using a quality checker
+    * Define a regularization un-normalized density function from the quality checker q
+* Loss function
+    * EDM framework
+* Tradeoff weights in a fitting problem
+    * Consider two independent random variables x_1 and x_2 
+    * Solve the fitting problem
+* The application in our setting
+    * We want to find the relative between lambda_data(sigma) and lambda_reg(sigma)
+* Variance of the data term
+    * Theorem 1 (informal): Asymptotically
+* Variance of the regularization term
+    * Theorem 2 (informal): For small sigma, we have
+* Training hyper-parameters
+* Implementation details
+* Baseline comparisons
+    * Reduced the gap to PSS of training shapes by 58.7%
+* Text-conditioned 3D shape generation
+* ARAPReg
+* Distribution alignment is insufficient
+* Neural networks are over-parameterized
+    * Can generalize well if trained well
+    * Foundation models generalize to different domains after fine-tuning
+* Enforce deformation priors to improve generalization
+* Prior about deformable objects
+    * As-Rigid-As Possible Deformation
+* Prior applications of ARAP
+    * Enforce ARAP deformatiom between a base shape and deformed shapes
+* Challenge
+    * Large non-rigid shape variations that are not ARAP
+* ARAPReg - key idea
+    * Enforce APAP between adjacent synethetic shapes
+* The formation
+    * Taylor expansion
+* Eigen-analysis
+    * Eigenvectors of H_R(g,J)
+    * Shape variations are less penalized
+* Modeling the regularization term
+* Learning generative models
+    * Assume pre-defined correspondences
+* Evaluation
+* Shape interpolation
+* GeoLatent: A Geometric Approach
+* The formation
+    * Taylor expansion
+    * Riemannian metric
+* An extrinsic Riemannian metric
+    * Pull-back metric of an extrinsic deformation metric in the ambient space
+        * In constrast to many approaches in the image domain which use extrinsic Euclidean metric
+    * Unlike early work of Sobolev metrics
+        * Intrinsic
+* GeoLatent
+    * Use this metric to perform latent space design
+        * Geodesic interpolation
+        * Pose-shape
+* Desired property I: Geodesic interpolation
+* Issue with existing latent spaces
+    * (Top) Linear interpolations in latent codes
+    * (Bottom) Geodesic interpolations
+* Exact geodesic interpolation
+    * All linear interpolations follow geodesic curves
+    * Induces that the metric is a constant, which means the shape space has zero curvature
+    * The metric is a constant if we enforce that linear interpolations in 2D sub-spaces formed by axes are geodesic
+* Axis-aligned geodesic interp.
+    * Can be obtained locally via re-parameterization
+        * Linear interpolations follow geodesic curves approximately
+    * In 2D, this is the so-called geodesic web
+* User study on shape interpolation
+* Multi-scale disentanglement
+* GenCorres: Consistent Shape Matching via Coupled Implicit-Explicit Shape Generative Models
+* Pair-wise Matching
+    * Goal: correspondences between two shapes
+    * Main idea: matching potentials + optimization
+    * Problem: Less effective between less similar shapes
+* Joint Shape Matching (JSM)
+    * Goal: consistent correspondences
+    * Main idea: mapping through intermediate objects
+    * Main pipeline: pair-wise matching as initialization + JSM refinement
+* JSM challenge II: pairwise and joint are decoupled
+* JSM challenge III: efficiency for incorporating new shapes
+* Our Solution: GenCorres
+    * Main idea: connect joint shape matching with shape generation
+* GenCorres: MapRepresentation
+    * The mesh generator + nearest neighbor search gives consistent correspondences (same topology)
+* Advantages
+    * Unifies joint matching (the generator) + pairwise matching (ARAP + loss between adjacent synethetic shapes and address challenge II)
+    * Use synthetic shapes to address challenge I (big data)
+* Problems of Initialization
+    * Requires good initialization
+        * The explicit generator requires correspondences
+    * Solution: align the shape collection using an implicit generator and use it define correspondences
+* GenCorres: Pipeline
+* GenCorres: Stage 1
+    * Learn an implicit generator
+    * Objective function
+* Matching implicit surfaces
+    * For each point on the surface compute the infinite defromations
+* Correspondences between implicit surfaces
+    * Constraint from implicit function
+        * Underdetermined (one constraint for each 3D point)
+    * Normal Velocity of a translating sphere
+* Constrained Optimization
+    * Computed via linearly constrained quadratic programming
+* Geometric deformation regularization
+    * Correspondences turn an implicit representation
+* Cycle-consistency regularization
+* Interpolation results
+* GenCorres: Stage 2
+* GenCorres: Stage 3
+* Quantitative results
+* Enhancing implicit shape generators using topological
+* Issues of SOTA generative models
+* Topology vs Geometry and PHysics
+    * Geometry is local while topology is global
+    * Many physically stable shapes are topologically infeasible, e.g., small holes
+* Persistent Diagrams
+* Topological signatures
+* Topological features of shapes
+* Facts about PDs
+    * Each PD is a 2D point cloud
+    * Based on filtrations of topoligcal spaces
+    * For implicit 3D shape generators it is standard ot use filtrations of sub-levelsets of volumetric implicit functions
+* Differentiability by bijections
+* Do not model topological priors
+    * Interpolation is done in the implicit function shape
+* Our Goal
+    * Train implicit shape decoder
+    * The shapes of the implicit generator match those of training shapes
+    * The latent codes of training shapes follow the prior Gaussian distribution
+    * PDs of synthetic shapes change smoothly
+* Regularizing the implicit shape generator?
+    * The stability theorem of persistent diagrams
+* Lipschitz regularization
+* However
+* PD Generator
+* Our main idea
+    * Learn PD point cloud generators from PDs of training shapes
+    * The output size of the PD generator is the maximum size of all training PDs
+        * Small PDs have points on the diagonal
+    * Offers implicit regularizations
+* PD generator distance
+* Formulation
+    * Align the PDs of synethic shapes with the corresponding PDs from the PD generator
+* Quantitative results
+* Conclusions
+    * 3D generative models are different from image generative models
+    * A field where ML and Computer Graphics synchronize
+    * Many problems to work on
+        * Develop regularization losses to improve physical stability of shape decoders
+* Acknowledgement
