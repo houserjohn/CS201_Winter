@@ -1033,3 +1033,102 @@
     * Many problems to work on
         * Develop regularization losses to improve physical stability of shape decoders
 * Acknowledgement
+## 3/12/2024 Week 10 Tuesday Lec 13
+* The surprising efficacy of "ungrounded" models for image and video understanding, and generation
+    * Prof. Trevor Darrell
+* A vision persons view of LLMs (circa last year)
+    * Amazing at textual translation and reasoning
+    * An intersting space to define visual tasks
+* "Ungrounded" grounding, and other recent advances in L[LMV]Ms
+    * Are LLMs already "Grounded" in some sense?
+        * Text-only LLMs have some spatial semantics (& outperform multimodal parsing)
+        * and know about scene graphs / layouts (& improve generative image models)
+        * and know how to plan "visual routines"
+    * Combine surprisingly well with vision backbones, even loosely (-> LLMs)
+    * What would it mean to have a vision-onlyl LVM? Can it scale?
+* Unsupervised Parsing
+    * How could we learn syntactic structure from text without any groundtruth supervision?
+    * No supervision over latent structure!
+* Multimodal Parsing
+    * Visually Grounded Neural Syntax Acquisition
+    * Visually Grounded Compound PCFGs
+    * A cat sipping from the cup on the table
+    * A cat is sitting under the table
+    * A dog is sitting on the table
+* Does Grammar Induction Need Pixels?
+* Experimental Setting
+* C-PCFG Workflow
+* Image Experimental Results (COCO 2014)
+* Summary
+* "Ungrounded" grounding, and other recent advances in L[LMV]Ms
+* GPT-4 + Stable Diffusion
+    * LLM-grounded Text-to-Image Diffusion Models
+    * Text-to-image diffusion models can generate realistic images
+* Prompt: A blue cube directly
+* We improve the prompt understanding ability of diffusion models
+    * By introducing LLMs for grounding
+* Typical Text-to-Image Diffusion
+* Our LLM-grounded Diffusion (LMD)
+* First Stage: Prompt -> Layout
+* LLM Completion
+* LLM Output -> Layout
+* Second Stage: Layout -> Image
+* Generate Masked Latent for Each Box
+* Compose the Latents
+* LLM-grounded Video Diffusion Models
+* LLM-grounded Video Diffusion (LVD)
+* Modular Visual Question Answering via Code Generation
+* Visual Question Answering (VQA)
+* Plan then Execute
+* Neuro-symbolic Evolution
+* Limitations: Error Propagation
+    * Q: A person who eats only these is called what
+    * A: "vegetarian"
+* Large Lanaguage Models (LLMs)
+* From LLMs to Large Multimodal Models (LLMs)
+    * E.g.: LLAVA: Text + Image Input; Text Output
+* VLMs struggle with fine grained understanding
+    * Vision and Language models (VLMs) excel
+* Why VLMs Fail
+    * Most images are easily distinguisable by objects
+    * VLMs (including LMMs) concentrate on objects
+* Scene Graphs (SGs) can help
+    * Benefits
+* CCoT (Compositional Chain of Thought)
+    * A zero-shot prompting method leveraging scene-graph generation for enhancing LMMs' compositional visual reasoning
+* Detailed View of CCoT Prompting
+* From LLMs to Large Multimodal Models (LMMs)
+* LLAMA -> LLAVA -> LISA, but fail on "false premise"
+* Qualitative Results
+* Can Language Models Learn to Listen?
+* From text alone, we predict corresponding listener motion
+* We autoregressively predict VQ listener motion tokens
+* Our method responds to user-inputted text
+* We can generate listeners for multi-person dialogues
+* Visual Prompting via "Image Inpainting" (aka masked reconstruction)
+* Motivation: Prompting GPT-3
+* Masked reconstruction (Visual LM) models
+* Computer Vision Figures Dataset
+* Training time
+* Limitations of Vision-only Prompting
+* Sequential Modeling Enables Scalable Learning for Large Vision Models
+* Is Vision-alone model scalable?
+    * VLMs and LLMs are scalable
+    * MAE doesn't show good scaling behaviors
+        * pretrained starts to saturate
+        * more pretraining data doesn't help the downstreams
+* Rethink the paradigm of MAE
+    * Data: UVD
+    * Architecture: Autoregressive Model (LLaMA)
+    * Loss function: Classification loss (Retrain tokenizer with billion-level data)
+* Computer vision has been through a long way for unification
+* Visual sentence
+* LVM: Large Vision Model
+* More data, larger model, better downstreams
+* Next frame prediction
+* Compositionality
+* Raven's Progressive Test (Non-verabl IQ test)
+* Robot Learning with Sensorimotor Pre-training; CoRL 2023
+* Humanoid Locomotion as Next Token Prediction
+* A General Framework for Training with Missing Data
+* Same Architecture works for words as it does for images
